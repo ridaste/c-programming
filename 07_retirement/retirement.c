@@ -29,15 +29,15 @@ double print_monthly_status (double balance, int startAge, int number_months, do
 
 }
 
-void retirement (int startAge, double initial, retire_info w, retire_info r) {
+void retirement (int startAge, double initial, retire_info working, retire_info retired) {
 
   double balance = initial;
 
-  balance = print_monthly_status(balance, startAge, w.months, w.rate_of_return, w.contribution);
+  balance = print_monthly_status(balance, startAge, working.months, working.rate_of_return, working.contribution);
 
-  startAge += w.months;
+  startAge += working.months;
 
-  balance = print_monthly_status(balance, startAge, r.months, r.rate_of_return, r.contribution);
+  balance = print_monthly_status(balance, startAge, retired.months, retired.rate_of_return, retired.contribution);
 
 }
 
